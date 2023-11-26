@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, data } = useChat();
-  console.log(messages)
 
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
@@ -44,12 +43,12 @@ export default function Chat() {
             </div>
           ))
         : <div>
-            <h1 className='text-center'>AGA Super Agent</h1>
             <Image
               src="/aga.jpg"
               width={500}
               height={500}
               alt="Picture of the author"
+              priority={true}
             />
           </div>}
 
@@ -59,6 +58,7 @@ export default function Chat() {
           value={input}
           placeholder="Say something..."
           onChange={handleInputChange}
+          autoFocus={true}
         />
       </form>
     </div>
