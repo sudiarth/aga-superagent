@@ -7,6 +7,8 @@ export function Chat({ handler }: { handler: any }) {
     api: handler,
   });
 
+  console.log(messages)
+
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       <ul>
